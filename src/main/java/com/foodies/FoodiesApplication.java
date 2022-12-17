@@ -16,7 +16,7 @@ public class FoodiesApplication implements WebMvcConfigurer {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		CacheControl cc = CacheControl.maxAge(Duration.ofMinutes(3)).cachePublic().sMaxAge(Duration.ofHours(2));
 		registry.addResourceHandler("/resources/**").addResourceLocations("classpath:/static/").setCacheControl(cc);
-		System.out.println("addResourceHandler()");
+		System.out.println("addResourceHandler(---)");
 	}
 
 	@Override
