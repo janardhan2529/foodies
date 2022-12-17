@@ -1,15 +1,14 @@
 pipeline{
     agent any
+    triggers{
+        pollSCM('*/2 * * * *')
+    }
     stages{
-        stage('checkout stage'){
+        stage('pollscm'){
             steps{
-                echo "checkout stage is completed"
+                echo "every new commit"
             }
         }
-        stage('build checkout'){
-            steps{
-                echo "build completed"
-            }
-        }
+
     }
 }
