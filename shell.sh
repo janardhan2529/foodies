@@ -1,8 +1,5 @@
  #!/bin/bash
- sudo apt update -y
- function installjdk(){
-    sudo apt install -y openjdk-11-jdk
- }
+ 
     function checkDirectory(){
         if [ -d /u02/middleware ]; then
             echo "directory already available current agent node"
@@ -26,6 +23,7 @@ function checkTomcatServer(){
     sudo su tomcat bash -c "wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70-fulldocs.tar.gz -o /u02/middleware/apache-tomcat-9.0.70-fulldocs.tar.gz"
 
  }
+ sudo apt update -y
  installjdk
  checkDirectory
  checkTomcatServer
