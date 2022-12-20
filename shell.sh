@@ -19,12 +19,7 @@ function checkTomcatServer(){
         sudo useradd -m -s /bin/bash tomcat
         fi
  }
- function tomcatInstall(){
-    sudo su tomcat bash -c "wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70-fulldocs.tar.gz -o /u02/middleware/apache-tomcat-9.0.70-fulldocs.tar.gz"
-
- }
  sudo apt update -y
- installjdk
  checkDirectory
  checkTomcatServer
  tomcatInstall
