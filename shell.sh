@@ -1,9 +1,7 @@
  #!/bin/bash
  sudo apt update -y
 CHECK_TOMCAT_INSTALLATION=/u02/middleware/apache-tomcat-9.0.70/
- function installjdk(){
     sudo apt install -y openjdk-11-jdk
- }
  function checkTomcatServer(){
     CHECK_TOMCAT=$(cat /etc/passwd | cut -d ':' -f1 | grep 'tomcat' | wc -l)
     echo "$CHECK_TOMCAT"
@@ -41,7 +39,6 @@ function tomcatExtract(){
                 cd -
         fi
 }
- installjdk
  checkTomcatServer
  checkDirectory
  tomcatInstall
