@@ -18,7 +18,7 @@ CHECK_TOMCAT_INSTALLATION=/u02/middleware/apache-tomcat-9.0.70/
                   echo "already exist"
           else
          echo "download"
-          sudo su tomcat bash -c "wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz -P u02/middleware"
+           wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz -P u02/middleware
           sudo chown -R tomcat:tomcat u02
           fi
         if [ -d "$CHECK_TOMCAT_INSTALLATION" ]; then
