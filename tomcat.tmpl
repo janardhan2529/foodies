@@ -1,0 +1,17 @@
+[Unit]
+
+Description=tomcat as service
+After=networt.target
+[Service]
+
+type=forking
+user=#TOMCAT_USER
+group=#TOMCAT_GROUP
+Environment=JAVA_HOME=#JAVA_HOME#
+Environment=CATALINA_HOME=#CATALINA_HOME#
+ExecStart=#TOMCAT_HOME#
+ExecStop=#TOMCAT_HOME#
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
