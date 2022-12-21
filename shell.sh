@@ -1,6 +1,6 @@
  #!/bin/bash
  sudo apt update -y
-CHECK_TOMCAT_INSTALLATION=/u02/middleware/apache-tomcat-9.0.70/
+CHECK_TOMCAT_INSTALLATION=u02/middleware/apache-tomcat-9.0.70/
     sudo apt install -y openjdk-11-jdk
     CHECK_TOMCAT=$(cat /etc/passwd | cut -d ':' -f1 | grep 'tomcat' | wc -l)
     echo "$CHECK_TOMCAT"
