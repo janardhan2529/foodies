@@ -11,7 +11,7 @@ CHECK_TOMCAT_INSTALLATION=/u02/middleware/apache-tomcat-9.0.70/
         if [ ! -d u02/middleware ]; then
          echo "directory not available pls create and go forther"
            mkdir -p u02/middleware
-           
+
 
         fi
           if [ -d "$CHECK_TOMCAT_INSTALLATION" ]; then
@@ -19,17 +19,8 @@ CHECK_TOMCAT_INSTALLATION=/u02/middleware/apache-tomcat-9.0.70/
           else
          echo "download"
          cd u02/middleware
-           wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz 
+           wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz
+           sudo chmod 766 apache-tomcat-9.0.70.tar.gz
+          tar -xvf apache-tomcat-9.0.70.tar.gz
            cd -
-          sudo chown -R tomcat:tomcat u02
-          fi
-        if [ -d "$CHECK_TOMCAT_INSTALLATION" ]; then
-                echo "tomcat already existing"
-        else
-                echo "extarct zip"
-                cd u02/middleware
-                  gunzip apache-tomcat-9.0.70.tar.gz
-                 tar -xvf apache-tomcat-9.0.70.tar
-                 rm -rf apache-tomcat-9.0.70.tar
-                cd -
         fi
