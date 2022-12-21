@@ -8,7 +8,7 @@ Group=#TOMCAT_GROUP#
 Environment="JAVA_HOME=#JAVA_HOME#"
 Environment="CATALINA_HOME=#CATALINA_HOME#"
 ExecStart=#TOMCAT_HOME#
-ExecStop=#TOMCAT_HOME_stop#
+ExecStop=##TOMCAT_HOME_stop##
 Restart=always
 
 [Install]
