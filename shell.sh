@@ -19,7 +19,6 @@
          echo "download"
          cd u02/middleware
            wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz
-           sudo chmod 766 apache-tomcat-9.0.70.tar.gz
           tar -xvf apache-tomcat-9.0.70.tar.gz
            cd -
         fi
