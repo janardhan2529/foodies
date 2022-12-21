@@ -9,6 +9,9 @@ pipeline{
         timestamps()
         timeout(time:1, unit: 'HOURS')
     }
+    triggers{
+        pollSCM('*/1 * * * * ')
+    }
     stages{
         stage('checkout'){
             steps{
