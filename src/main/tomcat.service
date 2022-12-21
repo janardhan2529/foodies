@@ -1,15 +1,28 @@
 [Unit]
-Description=tomcat service
-After=networt.target
+
+Description=Tomcat
+
+After=network.target
+
+
+
 [Service]
+
 Type=forking
-User=#TOMCAT_USER#
-Group=#TOMCAT_GROUP#
-Environment="JAVA_HOME=#JAVA_HOME#"
-Environment="CATALINA_HOME=#CATALINA_HOME#"
-ExecStart=#TOMCAT_HOME#
-ExecStop=#TOMCAT_HOME_stop#
+
+Environment="JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/"
+
+Environment="CATALINA_HOME=/home/vagrant/u02/middleware/apache-tomcat-9.0.70/"
+
+ExecStart=/home/vagrant/u02/middleware/apache-tomcat-9.0.70/bin/startup.sh
+
+ExecStop=/home/vagrant/u02/middleware/apache-tomcat-9.0.70/bin/shutdown.sh
+
 Restart=always
 
+Restart=always
+
+
 [Install]
+
 WantedBy=multi-user.target
