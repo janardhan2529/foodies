@@ -2,14 +2,12 @@
  sudo apt update -y
 CHECK_TOMCAT_INSTALLATION=/u02/middleware/apache-tomcat-9.0.70/
     sudo apt install -y openjdk-11-jdk
- function checkTomcatServer(){
     CHECK_TOMCAT=$(cat /etc/passwd | cut -d ':' -f1 | grep 'tomcat' | wc -l)
     echo "$CHECK_TOMCAT"
     if [ $CHECK_TOMCAT -eq 0 ]; then
      echo "create user"
         sudo useradd -m -s /bin/bash tomcat
         fi
- }
     function checkDirectory(){
         if [ ! -d /u02/middleware ]; then
          echo "directory not available pls create and go forther"
@@ -39,7 +37,6 @@ function tomcatExtract(){
                 cd -
         fi
 }
- checkTomcatServer
  checkDirectory
  tomcatInstall
  tomcatExtract
